@@ -1,27 +1,147 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+@import '_tonatov';
+.container {
+    #meBack{
+        position: absolute;
+        top: 1vh;
+        z-index: 4;
+    }
+    .menu{
+        display: grid;
+        z-index: 5;
+        margin-top: 4vh;
+        position: sticky;
+        grid-template-columns: 1fr 1fr;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        background: linear-gradient(to right, rgba(255,255,255,0),rgba(255,255,255,0.1), rgba(0,0,0,1),rgba(0,0,0,1));
+        
+    }
+    .menu2 {
+        position: sticky;
+        width: 100vw;
+        height: 3px;
+      
+        top: 0;
+        left: 0;
+        z-index: 6;
+        background: linear-gradient(to right, rgba(255,255,255,0),rgba(255,255,255,0),rgba(255,255,255,0), rgba(255, 0, 0,1),rgba(255, 0, 0,1));
+    }
+    .background{
+        margin-top: -4vh;
+        background-image: url('/assets/kidos.jpg');
+        background-position: center center;
+        background-size: cover;
+        min-height: 104vh;
+        min-width: 100vw;
+        position: absolute;
+        background-color: rgba(red,0.5);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    }
+    .landing{
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        min-height: 95vh;
+        padding:40vh 2vw 0 2vw;
+        background: linear-gradient(to bottom left, rgba(255,255,255,0), rgba(0,0,0,1));
+        .slides{
+            float: left;
+            width: 30vw;
+            box-shadow: 0 0 20px 0 rgba($color: #a8a8a8, $alpha: .1),
+                    0 0 10px 0 rgba($color: #838383, $alpha: .9);
+            .slide{
+                position: absolute;
+                width: 30vw;
+                padding: 1vw;
+                display: grid;
+                border-radius: 5px;
+                grid-template-columns: 1fr 1fr;
+                background-color: rgba(230, 230, 230,.7);
+                .imgio{
+                    width: 10vw;
+                    margin: auto auto;
+                }
+            }
+            .front{
+                transform: perspective(700px) rotateX(0deg);
+                backface-visibility: hidden;
+                transition: transform .5s linear 0s;
+            }
+            .back{
+                transform: perspective(700px) rotateX(180deg);
+                backface-visibility: hidden;
+                transition: transform .5s linear 0s;
+            }
+        }
+        .slides:hover{
+            .back{
+                transform: perspective(700px) rotateX(0deg);
+               
+            }
+            .front{
+                transform: perspective(700px) rotateX(-180deg);
+              
+            }
+        }
+        .welcomeText{
+            color: whitesmoke;
+            text-align: center;
+            font-size: 2vw;
+        }
+    }
+    .objectives{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: black;
+        color: rgb(189, 189, 189);
+        padding: 2vw;
+        p{
+            grid-column: 1/3;
+            text-align: center;
+            font-size: 2vw;
+        }
+        .coolCards{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 7px;
+            width: 80%;
+            background-color: whitesmoke;
+            color: #000;
+            align-self: center;
+            margin: 3vh auto;
+            text-align: justify;
+            padding: 1vw;
+            border-radius: 5px;
+            .imagg{
+                img{
+                    width: 70%;
+                    float: right;
+                }
+            }
+        }
+    }
+    .aboutUs{
+        background-image: url('/assets/backCool.jpeg');
+        background-position: center center; 
+        background-size: cover;
+        min-height: 100vh;
+        position: relative;
+        div{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 1vw;
+            border-radius: 5px;
+        }
+    }
+    .contacts{
+        min-height: 50vh;
+        background-color: black;
+    }
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
